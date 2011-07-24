@@ -47,6 +47,7 @@
     <Compile Include="Drawing\ImageOrientation.cs" />
     <Compile Include="Drawing\CenteredCrop.cs" />
     <Compile Include="Drawing\ShrinkWithMinSize.cs" />
+    <Compile Include="Drawing\JpegExporter.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
