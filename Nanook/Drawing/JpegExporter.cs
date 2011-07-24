@@ -33,7 +33,7 @@ namespace Nanook.Drawing {
         }
 
         public override Image Execute(Image source) {
-            var qualityParam = new EncoderParameter(Encoder.Quality, Quality);
+            var qualityParam = new EncoderParameter(Encoder.Quality, (long)Quality);
             
             var encoderParams = new EncoderParameters(1);
             encoderParams.Param[0] = qualityParam;
