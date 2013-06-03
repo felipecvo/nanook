@@ -3,12 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nanook", "Nanook\Nanook.csproj", "{CF238143-6471-4A00-A704-E92895D42137}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nanook.Server", "Nanook.Server\Nanook.Server.csproj", "{4D287F43-D042-45CA-A2E1-09B3600638CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4D287F43-D042-45CA-A2E1-09B3600638CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D287F43-D042-45CA-A2E1-09B3600638CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D287F43-D042-45CA-A2E1-09B3600638CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D287F43-D042-45CA-A2E1-09B3600638CD}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF238143-6471-4A00-A704-E92895D42137}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF238143-6471-4A00-A704-E92895D42137}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF238143-6471-4A00-A704-E92895D42137}.Release|Any CPU.ActiveCfg = Release|Any CPU

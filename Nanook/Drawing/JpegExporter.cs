@@ -1,18 +1,33 @@
-using System.Drawing;
-using System.Drawing.Imaging;
 namespace Nanook.Drawing {
     using System;
+    using System.Drawing;
+    using System.Drawing.Imaging;
+    using System.IO;
 
     public class JpegExporter : Command {
+        public JpegExporter(Stream stream, byte quality) {
+            Quality = quality;
+            OutputStream = stream;
+        }
+
         public JpegExporter(string path, byte quality) {
             Quality = quality;
-            if (Quality > 100)
-                Quality = 100;
             Path = path;
         }
 
-        public byte Quality { get; set; }
+        private byte quality;
+        public byte Quality {
+            get { return quality; }
+            set {
+                if (value > 100 || value < 0) {
+                    quality = 100;
+                } else {
+                    quality = value;
+                }
+            }
+        }
         public string Path { get; set; }
+        public Stream OutputStream { get; set; }
 
         private static ImageCodecInfo encoderInfo;
         public static ImageCodecInfo Codec {
@@ -37,8 +52,12 @@ namespace Nanook.Drawing {
             
             var encoderParams = new EncoderParameters(1);
             encoderParams.Param[0] = qualityParam;
-            
-            source.Save(Path, Codec, encoderParams);
+
+            if (string.IsNullOrEmpty(Path)) {
+                source.Save(OutputStream, Codec, encoderParams);
+            } else {
+                source.Save(Path, Codec, encoderParams);
+            }
             
             return source;
         }
